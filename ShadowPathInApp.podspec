@@ -10,11 +10,12 @@ Pod::Spec.new do |s|
   s.author        = { "iCodesign" => "ShadowPathInApp.com" }
   s.ios.deployment_target = '7.0'
   s.osx.deployment_target = '10.9'
-  s.source_files  = "ShadowPath", "ShadowPath/**/*.{c,h,m,swift}"
+  s.source     = { :git => 'https://github.com/SpikeLeeHom/ShadowPathInApp.git', :tag => s.version.to_s }
+  s.source_files  = "ShadowPathInApp", "ShadowPathInApp/**/*.{c,h,m,swift}"
   s.libraries = "z" 
   s.pod_target_xcconfig = { 
     'OTHER_CFLAGS' => '-DHAVE_CONFIG_H -DUSE_CRYPTO_OPENSSL -DLIB_ONLY -DUDPRELAY_LOCAL -DMODULE_LOCAL', 
     # 'HEADER_SEARCH_PATHS' => '',
   }
-  s.vendored_libraries = 'ShadowPath/Antinat/expat-lib/lib/libexpat.a', 'ShadowPath/shadowsocks-libev/libopenssl/lib/libcrypto.a', 'ShadowPath/shadowsocks-libev/libopenssl/lib/libssl.a', 'ShadowPath/shadowsocks-libev/libsodium-ios/lib/libsodium.a'
+  s.vendored_libraries = 'ShadowPathInApp/Antinat/expat-lib/lib/libexpat.a', 'ShadowPathInApp/shadowsocks-libev/libopenssl/lib/libcrypto.a', 'ShadowPathInApp/shadowsocks-libev/libopenssl/lib/libssl.a', 'ShadowPathInApp/shadowsocks-libev/libsodium-ios/lib/libsodium.a'
 end
